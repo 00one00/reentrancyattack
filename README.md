@@ -174,6 +174,8 @@ Fund the contract using the contract owner along with a couple of clients:
 
   $ brownie run scripts/fund_safe_store.py --network goerli
 
+### SafeStoreAttack
+  
 Next, we will attempt to attack SafeStore and if it works as it should we will get a print statement letting us know that the attack has been reverted:
 
   $ brownie run scripts/attack_safe_store.py --network goerli
@@ -181,10 +183,18 @@ Next, we will attempt to attack SafeStore and if it works as it should we will g
 If the last line of your terminal is showing
 "Funds still in SafeStore contract use withdraw script to get funds back"
 then congratulations! You've just deployed a contract that is anti-reentrant and you can rest assured your users funds are safe and sound. 
+  
+### Withdrawing funds from the contracts
+
 If you want your funds back after this test you will need to, well..use the withdraw script to get your funds back.
-To do this, run:
+  
+To withdraw funds from the SafeStore contract, run:
 
   $ brownie run scripts/withdraw_safe_store.py --network goerli
+  
+ If you want to withdraw funds from the EtherStore contract without carrying out the attack scripts, run:
+  
+  $ brownie run scripts/withdraw_ether_store.py --network goerli
 
 All of the funds you used during this process should now be back in your wallet. But it is important to note that you should always play with free testnet eth on experiements like this and only deploy to mainnet when your app is ready to go into production.
 
