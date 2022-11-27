@@ -29,31 +29,37 @@ Project is created with:
 
 ## Setup
 To run this project:
+
 Download Python:
+
 If you don't have Python installed on your machine, click the Python/downloads link provided in the links section and follow the prompts.
+
 Download brownie:
+
 Once you have Python installed on your machine you will need to install the Brownie development framework: a Python-based development and testing framework for smart contracts targeting the Ethereum Virtual Machine.
 You can follow the instructions provided in the brownie documentation which is also in the "Links" section.
 
 Since brownie needs pipx to be installed, start by installing pipx by running the two following commands in your terminal:
 
-$ python3 -m pip install --user pipx
-$ python3 -m pipx ensurepath
+  $ python3 -m pip install --user pipx
+  $ python3 -m pipx ensurepath
 
 Note: You may need to restart your terminal after installing pipx
 
 To install Brownie using pipx:
-$ pipx install eth-brownie
+
+  $ pipx install eth-brownie
 
 Once installation is complete, type brownie to verify that it worked:
 
-$ brownie
+  $ brownie
+
 Brownie - Python development framework for Ethereum
 Usage:  brownie <command> [<args>...] [options <args>]
 
 Finally, install the web3py library if you haven't already. This installation is optional since we are only using the library to convert balances into a more readable format. Although it is optional, you will need to delete or comment out the lines of code utilizing this library if you choose not to run web3py.
 
-$ pip install web3
+  $ pip install web3
 
 
 ## API keys
@@ -69,16 +75,21 @@ You will not be able to deploy to the goerli testnet without a node API from inf
 
 Create a .env file and on the first line type:
 
-* For infura API: 
-export WEB3_INFURA_PROJECT_ID=<project_id>
-* For alchemy API: 
-export WEB3_ALCHEMY_PROJECT_ID=<project_id>
+* If you are using an Infura API: 
+  
+  export WEB3_INFURA_PROJECT_ID=<project_id>
+
+* Or if you are using an Alchemy API: 
+  
+  export WEB3_ALCHEMY_PROJECT_ID=<project_id>
 
 Then enter your etherscan API if you chose to verify your contracts:
-export ETHERSCAN_TOKEN=<etherscan_api>
+
+  export ETHERSCAN_TOKEN=<etherscan_api>
 
 Once finished, in your terminal type:
-$ source .env
+
+  $ source .env
 
 ## Brownie accounts setup
 
@@ -92,7 +103,7 @@ Note: You can name your accounts under the same names used in the scripts "metam
 You will then be prompted to enter the accounts seed phrase followed by a password. If you are using metamask: create a new account, click the 3 vertical dots on the top right of the dropdown and then click "account details". Next, hit "export private key". You will then be prompted to enter your metamask password. Finally, copy and paste the private key into your terminal.
 Once you have created all four brownie accounts you can check them by running:
 
-$ brownie accounts list
+  $ brownie accounts list
 
 If you have any problems with this step I have provided the link below to the brownie accounts documentation.
 
@@ -110,13 +121,14 @@ EtherStore is the first contract we are going to deploy, it is the contract with
 
 Deploy this contract onto the goerli testnet by typing into your terminal:
 
-$ brownie run scripts/deploy_ether_store.py --network goerli
+  $ brownie run scripts/deploy_ether_store.py --network goerli
 
 again, if you want to run on the default development network simply leave out "--network goerli".
 
 Now that the contract is deployed you need to fund it with the accounts you created by running:
 
-$ brownie run scripts/fund_ether_store.py --network goerli
+  $ brownie run scripts/fund_ether_store.py --network goerli
+  
 This script is doing a few things: checking to see if the contract has already been deployed and if not it will deploy the contract for you. Next, it is funding the account through the contract owner (because they want to play too) and finally it is being funded by two innocent victims that have no idea what is about to happen. These will be the funds that are stolen.
 
 Sweet! You have deployed a smart contract and have "clients" who have funded the contract and it is being utilized just as it was intended. What could go wrong? Run the attacker script to find out!
@@ -125,13 +137,13 @@ Sweet! You have deployed a smart contract and have "clients" who have funded the
 
 To deploy EtherStoreAttack run:
 
-$ brownie run scripts/attack_ether_store.py --network goerli
+  $ brownie run scripts/attack_ether_store.py --network goerli
 
 This is where the meat and potatoes is. Here, we are deploying the contract(EtherStoreAttack) that will be targeting EtherStore with the goal of completely draining all of the funds out of it.
 Once the attack contract is deployed the script will call the attack function that is written in the smart contract and then finally calling the withdraw function to get the funds out of EtherStoreAttack and into the attackers personal wallet.
 
 * If you need to withdraw funds without using the attack_ether_store script run:
-$ brownie run scripts/withdraw_ether_store.py --network goerli
+  $ brownie run scripts/withdraw_ether_store.py --network goerli
 
 ### Protecting against re-entrancy attacks
 
@@ -144,15 +156,15 @@ Either one of these steps alone will work just fine but it is better to be extra
 
 To deploy the upgraded anti-reentrancy contract, run:
 
-$ brownie run scripts/deploy_safe_store.py --network goerli
+  $ brownie run scripts/deploy_safe_store.py --network goerli
 
 Fund the contract using the contract owner along with a couple of clients:
 
-$ brownie run scripts/fund_safe_store.py --network goerli
+  $ brownie run scripts/fund_safe_store.py --network goerli
 
 Next, we will attempt to attack SafeStore and if it works as it should we will get a print statement letting us know that the attack has been reverted:
 
-$ brownie run scripts/attack_safe_store.py --network goerli
+  $ brownie run scripts/attack_safe_store.py --network goerli
 
 If the last line of your terminal is showing
 "Funds still in SafeStore contract use withdraw script to get funds back"
@@ -160,7 +172,7 @@ then congratulations! You've just deployed a contract that is anti-reentrant and
 If you want your funds back after this test you will need to, well..use the withdraw script to get your funds back.
 To do this, run:
 
-$ brownie run scripts/withdraw_safe_store.py --network goerli
+  $ brownie run scripts/withdraw_safe_store.py --network goerli
 
 All of the funds you used during this process should now be back in your wallet. But it is important to note that you should always play with free testnet eth on experiements like this and only deploy to mainnet when your app is ready to go into production.
 
@@ -169,11 +181,26 @@ I hope you found value in this and i am always open to feedback to improve my co
 
 
 ## Links
-https://www.python.org/downloads/
-https://eth-brownie.readthedocs.io/en/stable/install.html
-https://web3py.readthedocs.io/en/v5/quickstart.html
-https://eth-brownie.readthedocs.io/en/stable/core-accounts.html
-https://goerlifaucet.com/
-https://docs.etherscan.io/getting-started/viewing-api-usage-statistics
-https://docs.alchemy.com/docs/alchemy-quickstart-guide
-https://docs.infura.io/infura/getting-started
+* Download Python:
+  https://www.python.org/downloads/
+  
+* Install brownie framework:
+  https://eth-brownie.readthedocs.io/en/stable/install.html
+  
+* Install web3py library:
+  https://web3py.readthedocs.io/en/v5/quickstart.html
+  
+* Create custom accounts in brownie:
+  https://eth-brownie.readthedocs.io/en/stable/core-accounts.html
+  
+* Goerli testnet eth faucet:
+  https://goerlifaucet.com/
+  
+* Etherscan API key:
+  https://docs.etherscan.io/getting-started/viewing-api-usage-statistics
+  
+* Get Alchemy API key to connect to node:
+  https://docs.alchemy.com/docs/alchemy-quickstart-guide
+  
+* Get Infura API key to connect to node:
+  https://docs.infura.io/infura/getting-started
