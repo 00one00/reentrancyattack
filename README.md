@@ -234,4 +234,4 @@ I hope you found value in this and i am always open to feedback to improve my co
   https://docs.infura.io/infura/getting-started
   
 * Etherscan block explorer for goerli testnet:
-  goerli.etherscan.io
+  https://goerli.etherscan.io
