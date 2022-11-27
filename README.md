@@ -138,7 +138,7 @@ Now that the contract is deployed you need to fund it with the accounts you crea
 
   $ brownie run scripts/fund_ether_store.py --network goerli
   
-Note: You can view your contract on the etherscan block explorer if you are using the goerli testnet. In your terminal you will see a print statement "EtherStore deployed to "address", copy the address, go to goerli.etherscan.io and paste the contract address into the search bar at the top. You will be able to view all transactions that happen within that contract, and once the attack is carried out you can investigate what happened under "Internal Txns". You can also view individual transactions.
+Note: You can view your contract on the etherscan block explorer if you are using the goerli testnet. In your terminal you will see a print statement "EtherStore deployed to 'address'", copy the address, go to goerli.etherscan.io and paste the contract address into the search bar at the top. You will be able to view all transactions that happen within that contract, and once the attack is carried out you can investigate what happened under "Internal Txns". You can also view individual transactions.
   
 This script is doing a few things: checking to see if the contract has already been deployed and if not it will deploy the contract for you. Next, it is funding the account through the contract owner (because they want to play too) and finally it is being funded by two innocent victims that have no idea what is about to happen. These will be the funds that are stolen.
 
