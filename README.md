@@ -102,7 +102,14 @@ In your terminal run:
   
 Note: You can name your accounts under the same names used in the scripts "metamask-goerli", "test_acct_2", "test_acct_3"... or name the accounts whatever you'd like. Just keep in mind that if you use a different name while creating these accounts you will need to go through and edit the names in each one of the scripts to whatever names you have chosen since brownie will not know what "metamask-goerli" is.
 
-You will then be prompted to enter the accounts seed phrase followed by a password. If you are using metamask: create a new account, click the 3 vertical dots on the top right of the dropdown and then click "account details". Next, hit "export private key". You will then be prompted to enter your metamask password. Finally, copy and paste the private key into your terminal.
+You will then be prompted to enter the accounts seed phrase followed by a password. If you are using metamask: You will first need to switch to the goerli network. To do this, ensure your metamask shows testnet networks by going to metamask settings > Advanved and then toggling the "Show test networks" option. Once you have done that switch from "ethereum mainnet" at the top of your metamask dropdown and choose "goerli test network".
+
+Next, create a new account: you can do this by opening your metamask extension and clicking the circle at the top right and then clicking on "create new account" and follow the prompts. If you need more detail the link is includecd below. 
+
+Since brownie requires you to enter your private key into the terminal to create new, secure accounts you will need to export the private key of each account by clicking the 3 vertical dots on the top right of the dropdown and then choose "account details". Next, hit "export private key". You will then be prompted to enter your metamask password. 
+  
+Finally, copy and paste the private key into your terminal. More details on exporting metamask private keys are also included in the links below.
+
 Once you have created all four brownie accounts you can check them by running:
 
   $ brownie accounts list
@@ -194,6 +201,12 @@ I hope you found value in this and i am always open to feedback to improve my co
   
 * Create custom accounts in brownie:
   https://eth-brownie.readthedocs.io/en/stable/core-accounts.html
+  
+* Create new accounts on metamask:
+  https://metamask.zendesk.com/hc/en-us/articles/360015289452-How-to-create-an-additional-account-in-your-wallet
+  
+* Export metamask private key:
+  https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key#:~:text=On%20the%20account%20page%2C%20click,click%20%E2%80%9CConfirm%E2%80%9D%20to%20proceed.
   
 * Goerli testnet eth faucet:
   https://goerlifaucet.com/
