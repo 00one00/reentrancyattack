@@ -1,0 +1,18 @@
+networks:
+  default:
+    "development"
+  development:
+    verify: False
+  goerli: 
+  # CHANGE THIS VALUE TO False IF YOU DO NOT WISH TO USE THE ETHERSCAN API / VERIFY CONTRACT
+    verify: True
+  mainnet-fork-dev:
+    verify: False
+
+dotenv: .env
+
+settings:
+  gas_limit: "1500000000000"
+
+wallets:
+  from_key: ${PRIVATE_KEY}
