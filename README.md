@@ -42,6 +42,7 @@ You can follow the instructions provided in the brownie documentation which is a
 Since brownie needs pipx to be installed, start by installing pipx by running the two following commands in your terminal:
 
   $ python3 -m pip install --user pipx
+  
   $ python3 -m pipx ensurepath
 
 Note: You may need to restart your terminal after installing pipx
