@@ -154,6 +154,7 @@ This is where the meat and potatoes is. Here, we are deploying the contract(Ethe
 Once the attack contract is deployed the script will call the attack function that is written in the smart contract and then finally calling the withdraw function to get the funds out of EtherStoreAttack and into the attackers personal wallet.
 
 * If you need to withdraw funds without using the attack_ether_store script run:
+  
   $ brownie run scripts/withdraw_ether_store.py --network goerli
 
 ### Protecting against re-entrancy attacks
