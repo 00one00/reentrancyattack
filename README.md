@@ -118,7 +118,7 @@ If you have any problems with this step I have provided the link below to the br
 
 
 ## How to use
-The configuration file defaults us to automatically deploy to a development testnet, which you cannot view on etherscan and the transactions and history will be torn down as soon as the script is finished running. If you are looking to deploy to an actual testnet you will need to either set the default network in brownie-config.yaml to "goerli" or use the network flag in your terminal when running a script. If you are using goerli you will need goerli testnet eth, you can acquire this eth from a faucet for free, which i will provide the link to in the links section.
+The configuration file defaults us to automatically deploy to a development testnet, which you cannot view on etherscan and the transactions and history will be torn down as soon as the script is finished running. If you are looking to deploy to an actual testnet you will need to either set the default network in brownie-config.yaml to "goerli" or use the network flag in your terminal when running a script. If you are using goerli you will need goerli testnet eth, you can acquire this eth from a faucet for free, which i will provide the link to in the links section. If you do not have at least 0.8 goerli eth (0.2 goerli eth per test wallet) then you can change the amount to deposit and withdraw from the contracts in scripts/helpful_scripts.py - the amount can be as little as 0.02 goerli eth. Note the amounts should be the same for deposit_value and withdraw_value.
 
 If you want to run on the default development network simply leave out the "--network goerli" flag.
 
