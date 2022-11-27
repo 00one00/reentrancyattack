@@ -132,11 +132,13 @@ Deploy this contract onto the goerli testnet by typing into your terminal:
 
   $ brownie run scripts/deploy_ether_store.py --network goerli
 
-again, if you want to run on the default development network simply leave out "--network goerli".
+Again, if you want to run on the default development network simply leave out "--network goerli".
 
 Now that the contract is deployed you need to fund it with the accounts you created by running:
 
   $ brownie run scripts/fund_ether_store.py --network goerli
+  
+Note: You can view your contract on the etherscan block explorer if you are using the goerli testnet. In your terminal you will see a print statement "EtherStore deployed to <address>, copy the address, go to goerli.etherscan.io and paste the contract address into the search bar at the top. You will be able to view all transactions that happen within that contract, and once the attack is carried out you can investigate what happened under "Internal Txns". You can also view individual transactions.
   
 This script is doing a few things: checking to see if the contract has already been deployed and if not it will deploy the contract for you. Next, it is funding the account through the contract owner (because they want to play too) and finally it is being funded by two innocent victims that have no idea what is about to happen. These will be the funds that are stolen.
 
@@ -219,3 +221,6 @@ I hope you found value in this and i am always open to feedback to improve my co
   
 * Get Infura API key to connect to node:
   https://docs.infura.io/infura/getting-started
+  
+* Etherscan block explorer for goerli testnet:
+  goerli.etherscan.io
