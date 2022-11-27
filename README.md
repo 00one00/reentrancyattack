@@ -9,6 +9,13 @@ Disclaimer: This program is only intended for educational purposes on how to saf
 * [API keys](#api-keys)
 * [Brownie accounts setup](#brownie-accounts-setup)
 * [How to use](#how-to-use)
+* [EtherStore](#ether-store)
+* [EtherStoreAttack](#ether-store-attack)
+* [Protecting against re-entrancy attacks](#protecting-against-re-entrancy-attacks)
+* [SafeStore](#safe-store)
+* [SafeStoreAttack](#safe-store-attack)
+* [Withdrawing funds from the contracts](#withdrawing-funds-from-the-contracts)
+
 * [Links](#links)
 
 
