@@ -102,7 +102,7 @@ In your terminal run:
   
 Note: You can name your accounts under the same names used in the scripts "metamask-goerli", "test_acct_2", "test_acct_3"... or name the accounts whatever you'd like. Just keep in mind that if you use a different name while creating these accounts you will need to go through and edit the names in each one of the scripts to whatever names you have chosen since brownie will not know what "metamask-goerli" is.
 
-You will then be prompted to enter the accounts seed phrase followed by a password. If you are using metamask: You will first need to switch to the goerli network. To do this, ensure your metamask shows testnet networks by going to metamask settings > Advanved and then toggling the "Show test networks" option. Once you have done that switch from "ethereum mainnet" at the top of your metamask dropdown and choose "goerli test network".
+You will then be prompted to enter the accounts seed phrase followed by a password. If you are using metamask: You will first need to switch to the goerli network. To do this, ensure your metamask shows testnet networks by going to metamask settings > Advanced and then toggling the "Show test networks" option. Once you have done that switch from "ethereum mainnet" at the top of your metamask dropdown and choose "goerli test network".
 
 Next, create a new account: you can do this by opening your metamask extension and clicking the circle at the top right and then clicking on "create new account" and follow the prompts. If you need more detail the link is includecd below. 
 
