@@ -97,7 +97,8 @@ If you are running on a testnet or mainnet and want to utilize the get_account
 function in helpful_scripts, you will need to make four of your own custom accounts within the brownie framework.
 In your terminal run:
 
-$ brownie accounts new "Name of new account"
+  $ brownie accounts new "Name of new account"
+  
 Note: You can name your accounts under the same names used in the scripts "metamask-goerli", "test_acct_2", "test_acct_3"... or name the accounts whatever you'd like. Just keep in mind that if you use a different name while creating these accounts you will need to go through and edit the names in each one of the scripts to whatever names you have chosen since brownie will not know what "metamask-goerli" is.
 
 You will then be prompted to enter the accounts seed phrase followed by a password. If you are using metamask: create a new account, click the 3 vertical dots on the top right of the dropdown and then click "account details". Next, hit "export private key". You will then be prompted to enter your metamask password. Finally, copy and paste the private key into your terminal.
